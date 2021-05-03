@@ -86,7 +86,7 @@ class BenimUyg extends StatelessWidget {
                     textStyle: TextStyle(
                         color: Colors.blue,
                         letterSpacing: .5,
-                        fontSize: 25,
+                        fontSize: 20,
                         fontWeight: FontWeight.w700,
                         fontStyle: FontStyle.italic),
                   ),
@@ -97,9 +97,8 @@ class BenimUyg extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Container(
+              Card(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
-                padding: EdgeInsets.all(10.0),
                 color: Colors.black54,
                 child: Row(
                   children: [
@@ -125,9 +124,8 @@ class BenimUyg extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Container(
+              Card(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
-                padding: EdgeInsets.all(10.0),
                 color: Colors.black54,
                 child: Row(
                   children: [
@@ -153,9 +151,8 @@ class BenimUyg extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Container(
+              Card(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
-                padding: EdgeInsets.all(10.0),
                 color: Colors.black54,
                 child: Row(
                   children: [
@@ -181,9 +178,8 @@ class BenimUyg extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Container(
+              Card(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
-                padding: EdgeInsets.all(10.0),
                 color: Colors.black54,
                 child: Row(
                   children: [
