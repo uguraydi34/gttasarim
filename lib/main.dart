@@ -26,15 +26,17 @@ class BenimUyg extends StatelessWidget {
         //backgroundColor: Colors.pinkAccent[300],
         // ),
         body: SafeArea(
-          child: Column(
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            //column özellikleri
             //mainAxisSize: MainAxisSize.min, //en az ekranda yer kapla demek
-            mainAxisAlignment: MainAxisAlignment.end,
+            //mainAxisAlignment: MainAxisAlignment.end,
             //mainAxisAlignment: MainAxisAlignment.start, //Ana ekranın başından itibaren yukarıdan aşağı çizer varsayılan oludu için bişi değişmiyecek
             //mainAxisAlignment:MainAxisAlignment.end, //elemanalrı en alta yakın dizer.
             //mainAxisAlignment: MainAxisAlignment.center, //elemanları ortalar.
             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             //elemanalrın aralarında eşit boşluk bırakır
-            crossAxisAlignment: CrossAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             //yatayda ekranı doldurmasu için CrossAxisAligment.Stretch yazmak yeterli
             //bunu yaparsak alttaki widt degerleri geçersiz olur.
             children: [
@@ -56,43 +58,68 @@ class BenimUyg extends StatelessWidget {
                     alignment: FractionalOffset.center,
                     child: Image.asset("images/gtlogo.png")),
               ),
-              SizedBox(
-                height: 25,
-              ),
+
               Container(
-                width: 260,
+                width: double.infinity,
                 //height: 150,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: Colors.pinkAccent,
                   borderRadius: BorderRadiusDirectional.circular(16.0),
                 ),
-                child: Text(
-                  "Siz Hayal Edin Biz Tasarlayalım",
-                  style: TextStyle(
-                    fontFamily: "Tangerine1",
-                    fontSize: 22,
-                    color: Colors.white,
+                child: Center(
+                  child: Text(
+                    "Siz Hayal Edin Biz Tasarlayalım",
+                    style: TextStyle(
+                      fontFamily: "Tangerine1",
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
               SizedBox(
                 height: 25,
               ),
-              InkWell(
-                child: Text(
-                  "www.gulertasarim.com",
-                  style: GoogleFonts.lato(
-                    textStyle: TextStyle(
-                        color: Colors.blue,
-                        letterSpacing: .5,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.italic),
+              Center(
+                child: InkWell(
+                  child: Text(
+                    "www.gulertasarim.com",
+                    style: GoogleFonts.lato(
+                      textStyle: TextStyle(
+                          color: Colors.blue,
+                          letterSpacing: .5,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                  onTap:
+                      _launchURL, //burada yukarıdaki url tıklanında web sayfası açılır.
+                ),
+              ),
+
+              SizedBox(
+                height: 55,
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(horizontal: 20.0),
+                color: Colors.black54,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone_enabled_rounded,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    "0212 541 10 41",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-                onTap:
-                    _launchURL, //burada yukarıdaki url tıklanında web sayfası açılır.
               ),
               SizedBox(
                 height: 15,
@@ -100,25 +127,20 @@ class BenimUyg extends StatelessWidget {
               Card(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
                 color: Colors.black54,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.phone_enabled_rounded,
-                      size: 50,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone_iphone,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    "+90 554 587 87 87",
+                    style: TextStyle(
                       color: Colors.white,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
                     ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      "0212 541 10 41",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -127,25 +149,20 @@ class BenimUyg extends StatelessWidget {
               Card(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
                 color: Colors.black54,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.phone_enabled_rounded,
-                      size: 50,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    "iletisim@gulertasarim.com",
+                    style: TextStyle(
                       color: Colors.white,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
                     ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      "+90 554 587 87 87",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -154,52 +171,28 @@ class BenimUyg extends StatelessWidget {
               Card(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
                 color: Colors.black54,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.email,
-                      size: 50,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.pin_drop_outlined,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    "Adres",
+                    style: TextStyle(
                       color: Colors.white,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
                     ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      "iletisim@gulertasarim.com",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 20.0),
-                color: Colors.black54,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.pin_drop_outlined,
-                      size: 50,
+                  ),
+                  subtitle: Text(
+                    "Pınartepe Mah. Orhangazi Cad. No:2 Dükkan:2-FC Gülsar Konutları Beylikdüzü/İSTANBUL",
+                    style: TextStyle(
                       color: Colors.white,
+                      //fontSize: 15.0,
+                      //fontWeight: FontWeight.bold,
                     ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      "Adres:Beylikdüzü İstanbul",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
 
