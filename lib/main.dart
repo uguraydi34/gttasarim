@@ -79,7 +79,7 @@ class BenimUyg extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 45,
               ),
               Center(
                 child: InkWell(
@@ -98,7 +98,13 @@ class BenimUyg extends StatelessWidget {
                       _launchURL, //burada yukarıdaki url tıklanında web sayfası açılır.
                 ),
               ),
-
+              Container(
+                width: 200,
+                child: Divider(
+                  height: 150,
+                  color: Colors.white,
+                ),
+              ),
               SizedBox(
                 height: 55,
               ),
